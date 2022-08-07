@@ -25,7 +25,7 @@ if (!isset($_SESSION['logedin']) || $_SESSION['logedin'] != true) {
         ***********************************-->
 
         <div class="content-body">
-            <div class="container-fluid mt-5">
+            <div class="container mt-5">
                 <div class="row">
                     <?php
                     if (!empty($_SESSION['voteSuccess'])) {
@@ -62,32 +62,28 @@ if (!isset($_SESSION['logedin']) || $_SESSION['logedin'] != true) {
                                 <img src="../Statics/images/image3.jpg" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h4>Country</h4>
-                                    <h5>Make Make country corruption free</ph5
+                                    <h5>Make Make country corruption free</ph5 </div>
                                 </div>
                             </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
-            </div>
-
-            <div class="container-fluid">
 
             </div>
-        </div>
-        <!--**********************************
+            <!--**********************************
             Content body end
         ***********************************-->
 
-    </div>
-    <?php include('./footer.php'); ?>
+        </div>
+        <?php include('./footer.php'); ?>
 </body>
 
 </html>

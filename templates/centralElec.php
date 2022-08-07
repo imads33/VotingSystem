@@ -43,7 +43,7 @@ if ($voterexists > 0) {
                 if ($voted) {
                     echo '
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Sorry!</strong> You have voted for <strong>State Election</strong>
+                        <strong>Sorry!</strong> You have voted for <strong>Central Election</strong>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     ';
