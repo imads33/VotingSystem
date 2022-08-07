@@ -49,7 +49,10 @@ $name = $_SESSION['name'];
                         <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
                             <div class="dropdown-content-body">
                                 <ul>
-                                    <li><a href="../others/userlogout.php"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                    <li><a href="../templates/changepassword.php"><i class="icon-key"></i>
+                                            <span>Change Password</span></a></li>
+                                    <li><a href="../others/userlogout.php"><i class="icon-key"></i>
+                                            <span>Logout</span></a></li>
                                 </ul>
                             </div>
                         </div>

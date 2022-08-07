@@ -414,6 +414,7 @@ progress {
     vertical-align: baseline;
 }
 
+
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
     height: auto;
@@ -11757,6 +11758,7 @@ sub {
 }
 
 .dropdown-content-body ul>li {
+
     float: none;
     line-height: 1.25;
     padding: 0.9375rem 0;

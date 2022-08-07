@@ -17,6 +17,13 @@ if (!isset($_SESSION['logedin']) || $_SESSION['logedin'] != true) {
 </head>
 
 <body>
+    <style>
+        #success_msg {
+            margin-left: 20%;
+            width: 50%;
+        }
+    </style>
+
     <div id="main-wrapper">
         <?php include('./navbar.php'); ?>
 
@@ -24,9 +31,19 @@ if (!isset($_SESSION['logedin']) || $_SESSION['logedin'] != true) {
             Content body start
         ***********************************-->
 
-        <div class="content-body">
+        <div class="content-body mt-5">
             <div class="container mt-5">
                 <div class="row">
+                    <?php
+                    if (isset($_SESSION['changed'])) {
+                        echo '
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" id="success_msg">
+                            <strong>Success!</strong>The Password has changed
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                        unset($_SESSION['changed']);
+                    }
+                    ?>
                     <?php
                     if (!empty($_SESSION['voteSuccess'])) {
                         echo '
@@ -37,6 +54,7 @@ if (!isset($_SESSION['logedin']) || $_SESSION['logedin'] != true) {
                         unset($_SESSION['voteSuccess']);
                     }
                     ?>
+                    <div class="container mt-5">
                     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -75,6 +93,7 @@ if (!isset($_SESSION['logedin']) || $_SESSION['logedin'] != true) {
                             </button>
                         </div>
                     </div>
+                </div>
                 </div>
 
             </div>
