@@ -98,12 +98,33 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <div>
                     <div id="button-th">Listings</div>
                 </div>
-
-
+                <div class="container-fluid mt-3">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6" id="button-two">
+                            <form method='post'>
+                                <select name="etype" id="options" class="form-select">
+                                    <option value="All Election"> All Elections</option>
+                                    <option value="Central Election"> Central Election</option>
+                                    <option value="Gram Panchayat Election"> Gram Panchayat Election</option>
+                                    <option value="State Election"> State Election</option>
+                                    <option value="Taluk Panchayat Election"> Taluk Panchayat Election</option>
+                                </select>
+                                <button class="btn btn-success" type='submit' name='submit'>Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="row" style="margin-top:3%;">
                     <?php
-                    $candidates = "SELECT * FROM `candidates`";
+                    if (isset($_POST['submit'])) {
+                        $etype = $_POST['etype'];
+                        if ($etype != 'All Election') {
+                            $candidates = "SELECT * FROM `candidates` WHERE `eType`='$etype'";
+                        }
+                    } else {
+                        $candidates = "SELECT * FROM `candidates`";
+                    }
                     $result = mysqli_query($conn, $candidates);
                     while ($row = mysqli_fetch_assoc($result)) {
                         $cid = $row['cid'];
