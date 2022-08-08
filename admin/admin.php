@@ -107,13 +107,14 @@ while ($row = mysqli_fetch_assoc($result)) {
                     $result = mysqli_query($conn, $candidates);
                     while ($row = mysqli_fetch_assoc($result)) {
                         $cid = $row['cid'];
-
+                        $vote = 0;
                         $votes = "SELECT * FROM `votes`  WHERE `cid`='$cid'";
                         $result1 = mysqli_query($conn, $votes);
-                        while ($row2 = mysqli_fetch_assoc($result1)) {
-                            $vote = $row2['votes'];
+                        if (mysqli_num_rows($result1) > 0) {
+                            while ($row2 = mysqli_fetch_assoc($result1)) {
+                                $vote = $row2['votes'];
+                            }
                         }
-
                     ?>
                         <div class="col-lg-3 col-sm-6">
                             <div class="card">
